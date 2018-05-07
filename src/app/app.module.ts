@@ -1,46 +1,59 @@
+import { NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http';
+import { FormsModule } from '@angular/forms';
+import { IonicApp, IonicModule } from 'ionic-angular';
+import { ForumApp } from './app.component';
+// Pages
+import { AboutPage } from '../pages/about/about';
+import { CommentCreatePage } from '../pages/comment-create/comment-create';
+import { LoginPage } from '../pages/login/login';
+import { ProfilePage } from '../pages/profile/profile';
+import { SignupPage } from '../pages/signup/signup';
+import { TabsPage } from '../pages/tabs/tabs';
+import { ThreadCommentsPage } from '../pages/thread-comments/thread-comments';
+import { ThreadCreatePage } from '../pages/thread-create/thread-create';
+import { ThreadsPage } from '../pages/threads/threads';
+// Custom components
+import { ThreadComponent } from '../shared/components/thread.component';
+import { UserAvatarComponent } from '../shared/components/user-avatar.component';
+// providers
+import { APP_PROVIDERS } from '../providers/app.providers';
 import { BrowserModule } from '@angular/platform-browser';
-import { ErrorHandler, NgModule } from '@angular/core';
-import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
-import { SplashScreen } from '@ionic-native/splash-screen';
-import { StatusBar } from '@ionic-native/status-bar';
-
-import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
-
-// Import the AF2 Module
-import { AngularFireModule } from 'angularfire2';
-import { AngularFireDatabaseModule } from 'angularfire2/database';
-
-
-// AF2 Settings
-export const firebaseConfig = {
-  apiKey: "AIzaSyDnAX0CQbbsMYuOTJ66ox_F0GwzPM4XPXY",
-  authDomain: "angularfire2-list-example.firebaseapp.com",
-  databaseURL: "https://angularfire2-list-example.firebaseio.com",
-  storageBucket: "",
-  messagingSenderId: "609067141823"
-};
 
 @NgModule({
   declarations: [
-    MyApp,
-    HomePage
+    ForumApp,
+    AboutPage,
+    CommentCreatePage,
+    LoginPage,
+    ProfilePage,
+    SignupPage,
+    TabsPage,
+    ThreadCommentsPage,
+    ThreadCreatePage,
+    ThreadsPage,
+    ThreadComponent,
+    UserAvatarComponent
   ],
   imports: [
-    BrowserModule,
-    IonicModule.forRoot(MyApp),
-    AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireDatabaseModule
+    IonicModule.forRoot(ForumApp),
+    HttpModule,
+    FormsModule,
+    BrowserModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp,
-    HomePage
+    ForumApp,
+    AboutPage,
+    CommentCreatePage,
+    LoginPage,
+    ProfilePage,
+    SignupPage,
+    TabsPage,
+    ThreadCommentsPage,
+    ThreadCreatePage,
+    ThreadsPage
   ],
-  providers: [
-    StatusBar,
-    SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
-  ]
+  providers: [APP_PROVIDERS]
 })
 export class AppModule {}

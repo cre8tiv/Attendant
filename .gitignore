@@ -27,7 +27,7 @@ platforms/
 plugins/
 plugins/android.json
 plugins/ios.json
-www/
+
 $RECYCLE.BIN/
 .vscode
 .idea
@@ -41,7 +41,7 @@ dist
 tmp
 *.log*
 junit-results.xml
-package-lock.json
+
 .vs
 docs
 
